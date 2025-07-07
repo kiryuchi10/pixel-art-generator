@@ -1,0 +1,96 @@
+# ─────────────────────────────────────
+# SECURITY
+# ─────────────────────────────────────
+.env
+.env.*             # .env.local, .env.production, etc.
+.secret*
+secrets.*
+credentials.*
+auth.json
+*.pem
+*.key
+*.crt
+
+# ─────────────────────────────────────
+# SYSTEM + IDE
+# ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# ─────────────────────────────────────
+# NODE / FRONTEND
+# ─────────────────────────────────────
+node_modules/
+dist/
+build/
+.cache/
+.npm/
+.yarn/
+.pnp.*
+*.log
+*.lock
+
+# ─────────────────────────────────────
+# TAILWIND / WEBPACK / VITE
+# ─────────────────────────────────────
+tailwind.output.css
+vite.config.ts
+webpack.config.js
+coverage/
+report.html
+
+# ─────────────────────────────────────
+# PYTHON / BACKEND
+# ─────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.venv/
+venv/
+migrations/
+
+# ─────────────────────────────────────
+# DOCKER
+# ─────────────────────────────────────
+*.tar
+docker-compose.override.yml
+*.pid
+
+# ─────────────────────────────────────
+# TAURI BUILD
+# ─────────────────────────────────────
+src-tauri/target/
+src-tauri/.cargo/
+src-tauri/tauri.conf.json
+src-tauri/icons/*.ico
+src-tauri/icons/*.png
+
+# Include the final binary only if needed
+src-tauri/binaries/
+src-tauri/build/
+src-tauri/src/generated/
+
+# ─────────────────────────────────────
+# TEMP / CACHE
+# ─────────────────────────────────────
+*.tmp
+temp/
+.cache/
+.tmp/
+logs/
+*.log
+
+# ─────────────────────────────────────
+# USER ASSETS
+# ─────────────────────────────────────
+uploads/
+media/
+screenshots/
+static/generated/
