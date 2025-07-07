@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+.env
+__pycache__/
+*.pyc
+*.sqlite3
+*.keras
+*.h5
