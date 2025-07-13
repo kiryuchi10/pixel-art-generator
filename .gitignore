@@ -1,96 +1,55 @@
-# ─────────────────────────────────────
-# SECURITY
-# ─────────────────────────────────────
-.env
-.env.*             # .env.local, .env.production, etc.
-.secret*
-secrets.*
-credentials.*
-auth.json
-*.pem
-*.key
-*.crt
-
-# ─────────────────────────────────────
-# SYSTEM + IDE
-# ─────────────────────────────────────
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
-*.swo
-*.bak
-
-# ─────────────────────────────────────
-# NODE / FRONTEND
-# ─────────────────────────────────────
+# Node.js / Frontend
 node_modules/
 dist/
 build/
-.cache/
-.npm/
-.yarn/
-.pnp.*
-*.log
-*.lock
+.env
+.env.local
+.env.production
+.vite/
 
-# ─────────────────────────────────────
-# TAILWIND / WEBPACK / VITE
-# ─────────────────────────────────────
-tailwind.output.css
-vite.config.ts
-webpack.config.js
-coverage/
-report.html
-
-# ─────────────────────────────────────
-# PYTHON / BACKEND
-# ─────────────────────────────────────
+# Python / Backend
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.sqlite3
-.venv/
 venv/
-migrations/
-
-# ─────────────────────────────────────
-# DOCKER
-# ─────────────────────────────────────
-*.tar
-docker-compose.override.yml
-*.pid
-
-# ─────────────────────────────────────
-# TAURI BUILD
-# ─────────────────────────────────────
-src-tauri/target/
-src-tauri/.cargo/
-src-tauri/tauri.conf.json
-src-tauri/icons/*.ico
-src-tauri/icons/*.png
-
-# Include the final binary only if needed
-src-tauri/binaries/
-src-tauri/build/
-src-tauri/src/generated/
-
-# ─────────────────────────────────────
-# TEMP / CACHE
-# ─────────────────────────────────────
-*.tmp
-temp/
-.cache/
-.tmp/
-logs/
+.env
+.env.*
+instance/
+.mypy_cache/
+celerybeat-schedule
+*.sqlite3
 *.log
 
-# ─────────────────────────────────────
-# USER ASSETS
-# ─────────────────────────────────────
+# Tauri Desktop App
+/src-tauri/target/
+src-tauri/bundled
+src-tauri/icons/*.ico
+src-tauri/icons/*.png
+src-tauri/icons/*.icns
+
+# Models / Large Files
+models/
+*.keras
+*.h5
+*.pth
+*.onnx
 uploads/
-media/
-screenshots/
-static/generated/
+static/uploads/
+static/exports/
+exported_images/
+*.zip
+*.tar
+*.gz
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Secrets
+secrets.json
+credentials.json
+secret_keys.txt

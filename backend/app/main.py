@@ -1,25 +1,21 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))  # Add parent dir to path first
-
 from flask import Flask
-from flask_cors import CORS
-from dotenv import load_dotenv
-from db.database import db, init_db
-from config import Config
-from routes import main as main_routes  # if routes/__init__.py exists
+from routes import main  # ✅ This must match the filename (routes.py)
 
-load_dotenv()
+def create_app():
+    app = Flask(__name__)
 
-app = Flask(__name__)
-app.config.from_object(Config)
+    # DB setup here if needed
+    app.config.from_object("config.Config")
 
-# Initialize DB
-init_db(app)
-CORS(app)
+    from db.database import db
+    db.init_app(app)
 
-# Register blueprints
-app.register_blueprint(main_routes)
+    # Register blueprint
+    app.register_blueprint(main)  # ✅ Register routes from routes.py
 
-if __name__ == '__main__':
+    return app
+
+
+if __name__ == "__main__":
+    app = create_app()
     app.run(debug=True)

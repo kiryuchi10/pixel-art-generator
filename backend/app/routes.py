@@ -1,8 +1,6 @@
-# FIXED `backend/routes.py` - Flask Version
-from flask import Blueprint, request, jsonify, send_file
+from flask import Blueprint, request, jsonify
 from werkzeug.utils import secure_filename
 from datetime import datetime
-from io import BytesIO
 import os
 import uuid
 
@@ -13,6 +11,7 @@ from services.generate import generate_pixel_art_task, generate_from_image_task
 main = Blueprint("main", __name__)
 
 UPLOAD_FOLDER = "static/uploads"
+
 
 @main.route("/generate/text", methods=["POST"])
 def generate_from_text():
@@ -46,7 +45,7 @@ def generate_from_text():
             task_id=job_id
         )
 
-        return jsonify({"job_id": job_id, "status": "pending", "message": "Generation started"})
+        return jsonify({"job_id": job_id, "status": "pending", "message": "Text generation started"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -88,7 +87,7 @@ def generate_from_image():
             task_id=job_id
         )
 
-        return jsonify({"job_id": job_id, "status": "pending", "message": "Generation started"})
+        return jsonify({"job_id": job_id, "status": "pending", "message": "Image generation started"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
